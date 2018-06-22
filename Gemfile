@@ -3,11 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'jquery-rails' 
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
+
+
+#Generate Entity-Relationship Diagrams for Rails applications
+gem 'rails-erd'
+
 #Gem devise i18n
 gem 'devise-i18n'
 
 #internacionalização
 gem 'rails-i18n'
+
+#Rails gem of the Bootstrap based admin theme SB Admin 2.
+gem 'bootstrap_sb_admin_base_v2'
 
 #Manage Procfile-based applications
 gem 'foreman'

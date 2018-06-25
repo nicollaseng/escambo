@@ -1,0 +1,18 @@
+
+						<div class="col-lg-6">
+		                    <div class="panel panel-default">
+		                        <div class="panel-heading">
+		                            Categorias
+		                        </div>
+		                        <!-- /.panel-heading -->
+		                        <div class="panel-body">
+		                        	<%= form_for @category, url: backoffice_category_path do |f| %>
+		                        		<%= f.label :descrição_da_categoria %>
+		                        		<%= f.text_field :description %>
+		                        		<%= f.submit 'Alterar' %>
+		                            <% end %>
+		                        </div>
+		                        <!-- /.panel-body -->
+		                    </div>
+		                    <!-- /.panel -->
+                </div>

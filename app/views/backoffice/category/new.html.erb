@@ -1,0 +1,25 @@
+ <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <br/>
+                    <div class="col-lg-12">
+                       <%= form_for @category, url:  backoffice_category_index_path do |f| %>
+                            <%= f.label :descrição_da_categoria %>
+                             <%= f.text_field :description %>
+                             <%= f.submit 'Alterar' %>
+                        <% end %>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+  

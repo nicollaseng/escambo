@@ -6,6 +6,8 @@ ruby '2.5.1'
 gem 'jquery-rails' 
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 
 #Generate Entity-Relationship Diagrams for Rails applications
 gem 'rails-erd'

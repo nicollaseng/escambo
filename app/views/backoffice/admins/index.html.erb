@@ -1,2 +1,40 @@
-<h1>Backoffice::Admins#index</h1>
-<p>Find me in app/views/backoffice/admins/index.html.erb</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Administradores</h3>
+        <%= link_to new_admin_registration_path, class:"btn btn-success btn-circle pull-right", style: "margin-top: -45px" do %>
+        	<i class="fa fa-plus "></i>
+        <%end%>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<% @admins.each do |adm| %>
+                        <tr>
+                           <td><%= adm.email%></td>
+                           <td style="width: 150px">
+                           		<%= link_to edit_admin_registration_path(adm), class:"btn btn-primary btn-circle" do %>
+                               			<i class="fa fa-search-plus "></i>
+   							   	<% end %>
+   							   <button type="button" class="btn btn-danger btn-circle" disabled="disabled"><i class="fa fa-trash-o "></i>
+   							   </button>
+							</td>
+                    </tr>
+                     <%end%>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+

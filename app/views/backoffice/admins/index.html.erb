@@ -12,6 +12,7 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
+                        <th>Nome</th>
                         <th>Email</th>
                         <th>Senha</th>
                     </tr>
@@ -19,13 +20,14 @@
                 <tbody>
                 	<% @admins.each do |adm| %>
                     <tr>
+                      <td><%= adm.name%></td>
                       <td><%= adm.email%></td>
                         <td style="width: 150px">
                        		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
                            			<i class="fa fa-search-plus "></i>
   				              	<% end %>
                           <% if current_admin != adm %>
-                            <%= link_to backoffice_admin_path(adm), method: :delete, data: {confirm: "Você tem certeza que quer apagar o administrador #{adm.email}?"}, class: "btn btn-danger btn-circle" do %>
+                            <%= link_to backoffice_admin_path(adm), method: :delete, data: {confirm: "Você tem certeza que quer apagar o administrador <b>#{adm.email}?</b>"}, class: "btn btn-danger btn-circle" do %>
                                 <i class="fa fa-trash-o "></i>
                             <% end %>
                           <% end %>

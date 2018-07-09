@@ -23,6 +23,15 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def update
+
+  	pswd = params[:admin][:password]
+  	pswd_confirmation = params[:admin][:password_confirmation]
+
+  	if pswd.blank? && pswd_confirmation.blank? 
+  		params[:admin].delete(:password)
+  		params[:admin].delete(:password_confirmation)
+  	end
+
   	if @admin.update(admin_params)
   		redirect_to backoffice_admins_index_path, :notice => 'Admin atualizado com sucesso'
   	else

@@ -2,6 +2,13 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>Cadastrar Administrador</h3>
+         <% if @admin.errors.any? %>
+            <% @admin.errors.full_messages.each do |message| %>
+              <script>
+                $.notify("<%= message %>", "warn");
+              </script>
+            <% end %>
+       <% end %>
     </div>
     <div class="panel-body">
         <div class="table-responsive">

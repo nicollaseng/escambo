@@ -1,7 +1,8 @@
+<br>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>Administradores</h3>
-        <%= link_to new_admin_registration_path, class:"btn btn-success btn-circle pull-right", style: "margin-top: -45px" do %>
+        <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style: "margin-top: -45px" do %>
         	<i class="fa fa-plus "></i>
         <%end%>
     </div>
@@ -13,7 +14,6 @@
                     <tr>
                         <th>Email</th>
                         <th>Senha</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,7 +21,7 @@
                         <tr>
                            <td><%= adm.email%></td>
                            <td style="width: 150px">
-                           		<%= link_to edit_admin_registration_path(adm), class:"btn btn-primary btn-circle" do %>
+                           		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
                                			<i class="fa fa-search-plus "></i>
    							   	<% end %>
    							   <button type="button" class="btn btn-danger btn-circle" disabled="disabled"><i class="fa fa-trash-o "></i>

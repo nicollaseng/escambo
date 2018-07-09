@@ -18,17 +18,20 @@
                 </thead>
                 <tbody>
                 	<% @admins.each do |adm| %>
-                        <tr>
-                           <td><%= adm.email%></td>
-                           <td style="width: 150px">
-                           		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
-                               			<i class="fa fa-search-plus "></i>
-   							   	<% end %>
-   							   <button type="button" class="btn btn-danger btn-circle" disabled="disabled"><i class="fa fa-trash-o "></i>
-   							   </button>
-							</td>
-                    </tr>
-                     <%end%>
+                    <tr>
+                      <td><%= adm.email%></td>
+                        <td style="width: 150px">
+                       		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
+                           			<i class="fa fa-search-plus "></i>
+  				              	<% end %>
+                          <% if current_admin != adm %>
+                            <%= link_to backoffice_admin_path(adm), method: :delete, data: {confirm: "Você tem certeza que quer apagar o administrador #{adm.email}?"}, class: "btn btn-danger btn-circle" do %>
+                                <i class="fa fa-trash-o "></i>
+                            <% end %>
+                          <% end %>
+    							     </td>
+                      </tr>
+                  <%end%>
                 </tbody>
             </table>
         </div>

@@ -11,6 +11,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
 end
 
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 
 #Generate Entity-Relationship Diagrams for Rails applications
 gem 'rails-erd'

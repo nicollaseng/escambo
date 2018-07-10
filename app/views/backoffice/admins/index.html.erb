@@ -14,7 +14,8 @@
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Senha</th>
+                        <th>Permissão</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,6 +23,7 @@
                     <tr>
                       <td><%= adm.name%></td>
                       <td><%= adm.email%></td>
+                      <td><%= adm.role_br%></td>
                         <td style="width: 150px">
                        		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
                            			<i class="fa fa-search-plus "></i>

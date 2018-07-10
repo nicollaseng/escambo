@@ -3,7 +3,7 @@ class Backoffice::AdminsController < ApplicationController
 	before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@admins = Admin.all
+  	@admins = Admin.using_escope #Using escope. Escopes in Admin model
   end
 
   def new

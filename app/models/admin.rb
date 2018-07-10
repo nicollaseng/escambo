@@ -3,7 +3,15 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  enum role: [:full_acess, :restricted_acess]
+  enum role: [:full_acess, :restricted_acess] #0 - full acess / 1 - limited acess
+
+  scope :using_escope, -> {where(role:0)}
+  #using scope according documentation also using lambda method
+  #above could be re-write as 
+
+  # def self.using_escope
+  # 	where(role:0)
+  # end
 
   def role_br
   	if self.role == 'full_acess'

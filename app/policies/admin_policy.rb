@@ -1,4 +1,5 @@
 class AdminPolicy < ApplicationPolicy
+	
   
   def new?
   	user.full_acess?
@@ -8,6 +9,9 @@ class AdminPolicy < ApplicationPolicy
   	user.full_acess?
   end
 
+  def edit?
+  	user.full_acess?
+  end
 
 
   class Scope < Scope
@@ -15,5 +19,7 @@ class AdminPolicy < ApplicationPolicy
       scope
     end
   end
+
+
 
 end

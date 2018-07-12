@@ -2,9 +2,12 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3>Administradores</h3>
-        <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style: "margin-top: -45px" do %>
-        	<i class="fa fa-plus "></i>
-        <%end%>
+
+        <% if policy(@admins).new? %>
+          <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style: "margin-top: -45px" do %>
+          	<i class="fa fa-plus "></i>
+          <%end%>
+        <% end %>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -14,8 +17,10 @@
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Permissão</th>
-                        <th>Ação</th>
+                        <% if policy(@admins).edit? %>
+                          <th>Permissão</th>
+                          <th>Ação</th>
+                        <%end%>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,16 +28,18 @@
                     <tr>
                       <td><%= adm.name%></td>
                       <td><%= adm.email%></td>
-                      <td><%= adm.role_br%></td>
-                        <td style="width: 150px">
-                       		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
-                           			<i class="fa fa-search-plus "></i>
-  				              	<% end %>
-                          <% if current_admin != adm %>
-                            <%= link_to backoffice_admin_path(adm), method: :delete, data: {confirm: "Você tem certeza que quer apagar o administrador <b>#{adm.email}?</b>"}, class: "btn btn-danger btn-circle" do %>
-                                <i class="fa fa-trash-o "></i>
+                      <% if policy(@admins).edit? %>
+                          <td><%= adm.role_br%></td>
+                          <td style="width: 150px">
+                         		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
+                             			<i class="fa fa-search-plus "></i>
+    				              	<% end %>
+                            <% if current_admin != adm %>
+                              <%= link_to backoffice_admin_path(adm), method: :delete, data: {confirm: "Você tem certeza que quer apagar o administrador <b>#{adm.email}?</b>"}, class: "btn btn-danger btn-circle" do %>
+                                  <i class="fa fa-trash-o "></i>
+                              <% end %>
                             <% end %>
-                          <% end %>
+                          <%end%>
     							     </td>
                       </tr>
                   <%end%>

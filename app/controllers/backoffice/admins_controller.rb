@@ -40,6 +40,7 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def edit
+  	authorize @admin
   end
 
   def destroy

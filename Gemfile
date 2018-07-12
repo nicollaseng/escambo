@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'jquery-rails' 
+gem "pundit"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'

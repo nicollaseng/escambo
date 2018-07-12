@@ -8,6 +8,7 @@ class Backoffice::AdminsController < ApplicationController
 
   def new
   	@admin = Admin.new
+  	authorize @admin
   end
 
   def create
@@ -23,7 +24,6 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def update
-
   	pswd = params[:admin][:password]
   	pswd_confirmation = params[:admin][:password_confirmation]
 

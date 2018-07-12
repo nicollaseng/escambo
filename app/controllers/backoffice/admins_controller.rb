@@ -3,7 +3,7 @@ class Backoffice::AdminsController < ApplicationController
 	before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@admins = Admin.using_escope #Using escope. Escopes in Admin model
+  	@admins = Admin.all #Using escope. Escopes in Admin model
   end
 
   def new
@@ -59,7 +59,7 @@ class Backoffice::AdminsController < ApplicationController
   private
 
   def admin_params
-  	params.require(:admin).permit(:name,:email, :password, :password_confirmation)
+  	params.require(:admin).permit(:name,:email, :password, :password_confirmation, :role)
   end
 
   def set_admin

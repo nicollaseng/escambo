@@ -20,6 +20,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :permissão %><br />
+    <%= f.select "role", options_from_collection_for_select(options_roles,"description", "id"), prompt: "" %>
+  </div>
+
   <br>
   <div class="actions">
     <%= f.submit "Cadastrar" %>

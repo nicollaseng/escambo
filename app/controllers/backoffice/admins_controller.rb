@@ -43,11 +43,16 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def destroy
+  	authorize @admin
   	if @admin.destroy
   		redirect_to backoffice_admins_index_path, :notice => 'Admin excluido com sucesso'
   	else
   		render :edit
   	end
+  end
+
+  def pundit_user
+  	current_admin
   end
 
   private

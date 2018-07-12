@@ -5,7 +5,7 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   enum role: [:full_acess, :restricted_acess] #0 - full acess / 1 - limited acess
 
-  scope :using_escope, -> {where(role:0)}
+  scope :using_escope, -> {where(role:1)}
   #using scope according documentation also using lambda method
   #above could be re-write as 
 

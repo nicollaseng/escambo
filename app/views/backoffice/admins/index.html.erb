@@ -31,6 +31,9 @@
                       <% if policy(@admins).edit? %>
                           <td><%= adm.role_br%></td>
                           <td style="width: 150px">
+                            <%= link_to '#', class:"btn btn-info btn-circle", data: {toogle: "modal", target: "sendMailModal"} do %>
+                                  <i class="fa fa-envelope-o"></i>
+                            <% end %>
                          		<%= link_to edit_backoffice_admin_path(adm), class:"btn btn-primary btn-circle" do %>
                              			<i class="fa fa-search-plus "></i>
     				              	<% end %>
@@ -52,3 +55,4 @@
 </div>
 <!-- /.panel -->
 
+<%= render partial: 'backoffice/admins/sendMail' %>

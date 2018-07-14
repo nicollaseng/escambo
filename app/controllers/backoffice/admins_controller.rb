@@ -33,6 +33,7 @@ class Backoffice::AdminsController < ApplicationController
   	end
 
   	if @admin.update(admin_params)
+  		AdminMailer.update_email(current_admin, @admin).deliver_now
   		redirect_to backoffice_admins_index_path, :notice => 'Admin atualizado com sucesso'
   	else
   		render 'edit'

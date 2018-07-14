@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem "pundit"
 gem 'enum_help'
 
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-notifyjs'

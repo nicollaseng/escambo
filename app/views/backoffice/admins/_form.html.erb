@@ -23,7 +23,8 @@
 
   <div class="field">
     <%= f.label :permissão %><br />
-    <%= f.select "role", options_from_collection_for_select(options_roles,"description", "id"), prompt: "" %>
+    <%= f.collection_select :role,options_roles,:key,:value, prompt: true %>
+
   </div>
 
   <br>

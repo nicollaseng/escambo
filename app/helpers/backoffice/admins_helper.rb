@@ -1,10 +1,10 @@
 module Backoffice::AdminsHelper
-	OptionsRoles = Struct.new(:id,:description)
+	OptionsRoles = Struct.new(:key,:value)
 
 	def options_roles
 		options = []
 
-		Admin.roles.each do |key,value|
+		Admin.roles_i18n.each do |key,value|
 			options.push(OptionsRoles.new(key,value))
 		end
 

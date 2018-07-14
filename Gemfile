@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 gem 'jquery-rails' 
 gem "pundit"
+gem 'enum_help'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'

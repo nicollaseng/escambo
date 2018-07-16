@@ -9,6 +9,7 @@ gem 'enum_help'
 gem 'bootstrap'
 gem 'responders', '~> 2.0'
 gem 'kaminari'
+gem 'money-rails', '~>1'
 
 
 source 'https://rails-assets.org' do

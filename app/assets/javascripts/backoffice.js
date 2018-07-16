@@ -1,6 +1,7 @@
 //= require notifyjs
 //= require bootstrap_sb_admin_base_v2
 //= require bootbox
+
     
 /*!
  * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)

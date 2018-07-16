@@ -57,6 +57,13 @@ class Backoffice::AdminsController < ApplicationController
   	current_admin
   end
 
+  def admin_modal
+  respond_to do |format|
+    format.html
+    format.js
+  end
+end
+
   private
 
   def admin_params

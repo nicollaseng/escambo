@@ -6,6 +6,8 @@ ruby '2.5.1'
 gem 'jquery-rails' 
 gem "pundit"
 gem 'enum_help'
+gem 'bootstrap'
+gem 'responders', '~> 2.0'
 
 
 source 'https://rails-assets.org' do

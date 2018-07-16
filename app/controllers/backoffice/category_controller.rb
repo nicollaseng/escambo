@@ -4,7 +4,7 @@ class Backoffice::CategoryController < ApplicationController
 	layout 'backoffice'
   
   def index
-  	@categories = Category.all
+  	@categories = Category.order(:description)
   end
 
   def new

@@ -21,7 +21,8 @@ namespace :utils do
   	puts "Criando Anuncios Fakes...."
   	100.times do
 		Ad.create!(title: Faker::Commerce.product_name ,description: Faker::Lorem.paragraph(2),
-					category_id: Category.ids.sample, member_id: Member.ids.sample)
+					category_id: Category.ids.sample, member_id: Member.ids.sample,
+          price: "#{Random.rand(500)},#{Random.rand(99)}")
 	end
   end
 

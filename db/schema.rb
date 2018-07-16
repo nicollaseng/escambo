@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_150204) do
     t.bigint "member_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents"
+    t.integer "price_cents", default: 0
     t.index ["category_id"], name: "index_ads_on_category_id"
     t.index ["member_id"], name: "index_ads_on_member_id"
   end

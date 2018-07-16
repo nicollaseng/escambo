@@ -9,4 +9,21 @@ namespace :utils do
 	end
   end
 
+  task members: :environment do
+  	puts "Criando Membros Fakes...."
+  	10.times do
+		Member.create!(name: Faker::Name.name ,email:Faker::Internet.email,
+					 password:"123456",password_confirmation: "123456")
+	end
+  end
+
+   task ads: :environment do
+  	puts "Criando Anuncios Fakes...."
+  	100.times do
+		Ad.create!(title: Faker::Commerce.product_name ,description: Faker::Lorem.paragraph(2),
+					category_id: Category.ids.sample, member_id: Member.ids.sample)
+	end
+  end
+
 end
+

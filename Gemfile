@@ -8,6 +8,7 @@ gem "pundit"
 gem 'enum_help'
 gem 'bootstrap'
 gem 'responders', '~> 2.0'
+gem 'kaminari'
 
 
 source 'https://rails-assets.org' do

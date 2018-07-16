@@ -24,14 +24,6 @@ class Backoffice::AdminsController < ApplicationController
   end
 
   def update
-  	pswd = params[:admin][:password]
-  	pswd_confirmation = params[:admin][:password_confirmation]
-
-  	if pswd.blank? && pswd_confirmation.blank? 
-  		params[:admin].delete(:password)
-  		params[:admin].delete(:password_confirmation)
-  	end
-
   	if @admin.update(admin_params)
   		AdminMailer.update_email(current_admin, @admin).deliver_now
   		redirect_to backoffice_admins_index_path, :notice => 'Admin atualizado com sucesso'
@@ -67,11 +59,18 @@ end
   private
 
   def admin_params
+    if password_blank?
+        params[:admin].delete(:password) && params[:admin].delete(:password_confirmation)
+      end
   	params.require(:admin).permit(:name,:email, :password, :password_confirmation, :role)
   end
 
   def set_admin
   	@admin = Admin.find(params[:id])
+  end
+
+  def password_blank?
+    params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
   end
 
 

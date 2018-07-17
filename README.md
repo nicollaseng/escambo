@@ -1,24 +1,14 @@
-# README
+# EscamboSHOP - Buy or Change
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to our shoPlace we are very helpful to have you here. EscamboShop is a new concept of buy and change things on internet. 
 
-Things you may want to cover:
+>> We invite you to know our project and feel free to contribute with us
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Project Dependencies
+* ImageMagick (https://www.imagemagick.org/)
+* Devise
+* Pundit
+* MoneyRails
+* RailsAssets
+* Bootstrap
+* And more.

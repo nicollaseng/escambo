@@ -10,6 +10,7 @@ gem 'bootstrap'
 gem 'responders', '~> 2.0'
 gem 'kaminari'
 gem 'money-rails', '~>1'
+gem "paperclip", "~> 6.0.0"
 
 
 source 'https://rails-assets.org' do
